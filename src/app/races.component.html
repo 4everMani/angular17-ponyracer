@@ -1,0 +1,15 @@
+<div *ngIf="races.length > 0; else empty">
+    <h2>
+        Races.
+    </h2>
+    <ul *ngFor="let race of races; index as i">
+        <li [class.test]="true">
+            {{i}} - {{race.name}}
+        </li>
+    </ul>
+</div>
+<<ng-template #empty>
+    <h2>
+        No Races.
+    </h2>
+</ng-template>

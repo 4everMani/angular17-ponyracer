@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
 export class RaceModel {
     name!: string;
@@ -6,13 +7,13 @@ export class RaceModel {
 
 @Component({
     selector: 'ns-races',
-    template: ` <h2>Races</h2>
-                <button (click)="refreshRace()">Refresh the race list</button>
-                <p>{{ races.length}}</p>`,
-    standalone: true
+    templateUrl: './races.component.html',
+    styleUrl: './races.component.scss',
+    standalone: true,
+    imports: [CommonModule]
 })
 export class RacesComponent {
-    races: Array<RaceModel> = [];
+    races: Array<RaceModel> = [{name: 'Delhi'}, {name: 'Lucknow'}];
 
     refreshRace() : void {
         this.races = [{name: 'Delhi'}, {name: 'Lucknow'}];

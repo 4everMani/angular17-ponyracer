@@ -1,17 +1,15 @@
 import { Component } from '@angular/core';
 import { RacesComponent } from './races.component';
+import { PoniesComponent } from './ponies/ponies.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'ns-root',
   standalone: true,
-  imports: [RacesComponent],
-  template: `<h1 (click)="method2()">PonyRacer</h1>
-            <div (click)="method2()">
-              <div (click)="method1()">
-                <button>ClickMe</button>
-              </div>
-            </div>
-            <ns-races></ns-races>`,
+  imports: [RacesComponent, PoniesComponent, CommonModule],
+  template: `
+            <ns-ponies />
+            `,
   styleUrl: './app.component.css'
 })
 export class AppComponent {
